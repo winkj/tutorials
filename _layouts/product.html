@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<h1>{{ page.display_name }} - {{ page.description }}</h1>
+
+<p>{{ page.content | markdownify }}</p>
+
+<h3>Drivers</h3>
+<ul>
+    {% for driver in page.drivers %}
+      <li>
+        <p>{{ driver[0] }} - {{ driver[1].description }} - {{ driver[1].url }}</p>
+      </li>
+    {% endfor %}
+</ul>
+
+<h3>Breakout boards</h3>
+<ul>
+    {% for breakout in page.breakouts %}
+    <li>
+      <p>{{ breakout[0] }} - {{ breakout[1].description }} - {{ breakout[1].url }}</p>
+    </li>
+  {% endfor %} 
+</ul>
+
+
+<h3>News</h3>
+<ul>
+    {% assign list = site.posts | where: 'categories', "news" | where_exp: "item", "item.sensors contains page.id_name" %}
+    
+    {% for post in list %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a> - {{post.categories}}</li>
+    {% endfor %}
+</ul>
+
+<h3>Tutorials</h3>
+<ul>
+    {% assign list = site.posts | where: 'categories', "tutorials" | where_exp: "item", "item.sensors contains page.id_name" %}
+    
+    {% for post in list %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a> - {{post.categories}}</li>
+    {% endfor %}    
+</ul>

@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<h1>Tutorials</h1>
+
+<ul>
+  {% for product in site.products %}
+    <li>{{product.display_name}}</li>
+
+    <ul>
+      {% assign list = site.posts | where: 'categories', "tutorials" | where_exp: "item", "item.sensors contains product.id_name" %}
+      
+      {% for post in list %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}    
+    </ul>
+
+  {% endfor %}    
+</ul>
