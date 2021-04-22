@@ -8,6 +8,9 @@ layout: default
     <li>
       <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
       <i>{{ post.date | date: '%B %d, %Y'}} - {% include author_full_name.html author=post.author %}</i>
+      - {% for cat in post.categories %}
+        {{cat}}
+      {% endfor %}
       {{ post.excerpt }}
     </li>
   {% endfor %}
