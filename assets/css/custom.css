@@ -2,3 +2,9 @@
     max-width: 500px;
     width:100%;
   }
+
+
+  /* Modify the backgorund color */
+.navbar-custom {
+  background-color: darkgreen;
+}
