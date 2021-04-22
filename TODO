@@ -1,1 +1,2 @@
-convert navigation to data YAML
+- convert navigation to data YAML
+- create fragments for driver/breakout listing per sensor, and reuse on drivers.html and product layout
