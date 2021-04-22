@@ -4,7 +4,15 @@ layout: default
 <h1>{{ page.title }}</h1>
 
 <p>
-  <i>{{ page.date | date: '%B %d, %Y' }} by {{ page.author }}</i>
+  {% assign author = site.data.authors | where: 'short', page.author | first %}
+
+  <i>{{ page.date | date: '%B %d, %Y' }} by 
+    {% if author %}
+      {{ author.full }}
+    {% else %}
+      {{ page.author }}
+    {% endif %}
+  </i>
 </p>
 
 {{ content | markdownify }}
