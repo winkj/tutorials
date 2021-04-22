@@ -7,11 +7,8 @@ layout: default
 <p>{{ page.content | markdownify }}</p>
 
 <h3>Drivers</h3>
-<ul>
-    {% for driver in page.drivers %}
-      <li><a href="{{driver.url}}">{{ driver.description }}</a></li>
-    {% endfor %}
-</ul>
+{% include driver_list.html driver_list=page.drivers %}
+
 
 <h3>Breakout boards</h3>
 <ul>

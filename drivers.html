@@ -7,12 +7,7 @@ layout: default
 <ul>
   {% for product in site.products %}
     <li>{{product.display_name}}</li>
-
-    <ul>      
-        {% for driver in product.drivers %}
-        <li><a href="{{driver.url}}">{{ driver.description }}</a></li>
-      {% endfor %}
-    </ul>
+    {% include driver_list.html driver_list=product.drivers %}
 
   {% endfor %}    
 </ul>
