@@ -9,18 +9,14 @@ layout: default
 <h3>Drivers</h3>
 <ul>
     {% for driver in page.drivers %}
-      <li>
-        <p>{{ driver[0] }} - {{ driver[1].description }} - {{ driver[1].url }}</p>
-      </li>
+      <li>{{ driver[0] }} - {{ driver[1].description }} - {{ driver[1].url }}</li>
     {% endfor %}
 </ul>
 
 <h3>Breakout boards</h3>
 <ul>
     {% for breakout in page.breakouts %}
-    <li>
-      <p>{{ breakout[0] }} - {{ breakout[1].description }} - {{ breakout[1].url }}</p>
-    </li>
+    <li>{{ breakout[0] }} - {{ breakout[1].description }} - {{ breakout[1].url }}</li>
   {% endfor %} 
 </ul>
 
