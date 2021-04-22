@@ -2,7 +2,7 @@ collections:
   products:
     output: true
 
-baseurl: "/tutorials"
+baseurl: "/dev"
 
 
 defaults:
