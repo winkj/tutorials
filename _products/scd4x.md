@@ -2,6 +2,7 @@
 id_name: scd4x
 display_name: SCD4x
 description: Photo acoustic CO2 sensor
+snapada: https://www.snapeda.com/parts/SCD40-D-R1/Sensirion%20AG/view-part
 drivers:
     embedded:
         description: Generic embedded driver for SCD4x

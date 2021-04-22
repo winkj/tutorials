@@ -20,7 +20,6 @@ layout: default
   {% endfor %} 
 </ul>
 
-
 <h3>News</h3>
 <ul>
     {% assign list = site.posts | where: 'categories', "news" | where_exp: "item", "item.sensors contains page.id_name" %}
@@ -37,4 +36,8 @@ layout: default
     {% for post in list %}
       <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{post.categories}}</li>
     {% endfor %}    
+</ul>
+
+<h3>Design resources</h3>
+    <p><a href="{{ page.snapada.url }}">SnapEDA page for {{ page.display_name }}</a></li>
 </ul>
