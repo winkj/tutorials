@@ -9,7 +9,7 @@ layout: default
 <h3>Drivers</h3>
 <ul>
     {% for driver in page.drivers %}
-      <li>{{ driver[0] }} - {{ driver[1].description }} - {{ driver[1].url }}</li>
+      <li><a href="{{driver.url}}">{{ driver.description }}</a></li>
     {% endfor %}
 </ul>
 

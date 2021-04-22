@@ -4,12 +4,10 @@ display_name: SCD4x
 description: Photo acoustic CO2 sensor
 snapada: https://www.snapeda.com/parts/SCD40-D-R1/Sensirion%20AG/view-part
 drivers:
-    embedded:
-        description: Generic embedded driver for SCD4x
-        url: http://github.com/sensirion/embedded-scd
-    arduino:
-        description: Arduino driver for SCD4x
-        url: http://github.com/sensirion/?q=arduino-scd
+    - description: Generic embedded driver for SCD4x
+      url: http://github.com/sensirion/embedded-scd
+    - description: Arduino driver for SCD4x
+      url: http://github.com/sensirion/?q=arduino-scd
 
 breakouts:
     adafruit:

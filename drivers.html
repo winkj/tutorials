@@ -10,7 +10,7 @@ layout: default
 
     <ul>      
         {% for driver in product.drivers %}
-        <li>{{ driver[0] }} - {{ driver[1].description }} - {{ driver[1].url }}</li>
+        <li><a href="{{driver.url}}">{{ driver.description }}</a></li>
       {% endfor %}
     </ul>
 
