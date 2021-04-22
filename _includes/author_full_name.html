@@ -1,0 +1,6 @@
+{% assign item = site.data.authors | where: 'short', include.author | first %}
+{% if item != nil %}
+  {{item.full}}
+{% else %}
+  {{include.author}}
+{% endif %}
