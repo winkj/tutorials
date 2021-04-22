@@ -1,6 +1,12 @@
 {% assign item = site.data.authors | where: 'short', include.author | first %}
 {% if item != nil %}
-  {{item.full}}
+
+  {% if item.github != nil %}
+    <a href="http://github.com/{{item.github}}">{{item.full}}</a>
+  {% else %}
+    {{item.full}}
+  {% endif %}
+
 {% else %}
   {{include.author}}
 {% endif %}
