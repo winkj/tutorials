@@ -6,35 +6,45 @@ layout: default
 
 <p>{{ page.content | markdownify }}</p>
 
+{% if page.drivers %}
 <h3>Drivers</h3>
 {% include driver_list.html driver_list=page.drivers %}
+{% endif %}
 
-
+{% if page.breakouts %}
 <h3>Breakout boards</h3>
 <ul>
     {% for breakout in page.breakouts %}
     <li>{{ breakout[0] }} - {{ breakout[1].description }} - {{ breakout[1].url }}</li>
   {% endfor %} 
 </ul>
+{% endif %}
 
-<h3>News</h3>
-<ul>
-    {% assign list = site.posts | where: 'categories', "news" | where_exp: "item", "item.sensors contains page.id_name" %}
-    
-    {% for post in list %}
-      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{post.categories}}</li>
-    {% endfor %}
-</ul>
+{% assign list = site.posts | where: 'categories', "news" | where_exp: "item", "item.sensors contains page.id_name" %}
+{% assign list_length = list | size %}
+{% if list_length > 0 %}
+  <h3>News</h3>
+  <ul>
+      {% for post in list %}
+        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{post.categories}}</li>
+      {% endfor %}
+  </ul>
+{% endif %}
 
-<h3>Tutorials</h3>
-<ul>
-    {% assign list = site.posts | where: 'categories', "tutorials" | where_exp: "item", "item.sensors contains page.id_name" %}
-    
-    {% for post in list %}
-      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{post.categories}}</li>
-    {% endfor %}    
-</ul>
+{% assign list = site.posts | where: 'categories', "tutorials" | where_exp: "item", "item.sensors contains page.id_name" %}
+{% assign list_length = list | size %}
+{% if list_length > 0 %}
+  <h3>Tutorials</h3>
+  <ul>
+      {% for post in list %}
+        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{post.categories}}</li>
+      {% endfor %}
+  </ul>
+{% endif %}
 
-<h3>Design resources</h3>
-    <p><a href="{{ page.snapada.url }}">SnapEDA page for {{ page.display_name }}</a></li>
-</ul>
+
+{% if page.snapeda %}
+  <h3>Design resources</h3>
+      <p><a href="{{ page.snapada.url }}">SnapEDA page for {{ page.display_name }}</a></li>
+  </ul>
+{% endif %}

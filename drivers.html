@@ -6,8 +6,11 @@ layout: default
 
 <ul>
   {% for product in site.products %}
-    <li>{{product.display_name}}</li>
-    {% include driver_list.html driver_list=product.drivers %}
+
+    {% if product.drivers %}
+      <li>{{product.display_name}}</li>
+      {% include driver_list.html driver_list=product.drivers %}
+    {% endif %}
 
   {% endfor %}    
 </ul>
