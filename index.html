@@ -6,7 +6,7 @@ layout: default
 <ul>
   {% for post in site.posts %}
     <li>
-      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
       <i>{{ post.date }} - {{ post.author }}</i>
       {{ post.excerpt }}
     </li>

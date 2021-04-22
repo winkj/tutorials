@@ -7,7 +7,7 @@ layout: default
 <ul>
   {% for product in site.products %}
     <li>
-      <a href="{{ product.url }}">{{ product.display_name }}</a> - {{ product.description }}
+      <a href="{{ site.baseurl }}{{ product.url }}">{{ product.display_name }}</a> - {{ product.description }}
     </li>
   {% endfor %}
 </ul>
