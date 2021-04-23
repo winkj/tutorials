@@ -4,6 +4,19 @@
 }
 
 
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.lborder {
+  border-left: 3px solid lightgray;
+  padding-left: 10px;
+  margin-bottom: 25px;
+}
+
+
 /* default to avoid adding this to markdown */
 img {
   max-width: 500px;

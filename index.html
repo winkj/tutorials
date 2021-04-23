@@ -3,15 +3,20 @@ layout: default
 ---
 <h2>Latest Posts</h2>
 
-<ul>
+<ul class="post-list">
   {% for post in site.posts limit:site.data.dev_config.frontpage_post_count %}
-    <li>
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+    <li class="lborder">
+
       <i>{{ post.date | date: '%B %d, %Y'}} - {% include author_full_name.html author=post.author %}</i>
       - {% for cat in post.categories %}
         {{cat}}
       {% endfor %}
-      {{ post.excerpt }}
+      <div><h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5></div>
+
+      <p>{{ post.excerpt }}
+        <a class="moveup" href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+      </p>
+
     </li>
   {% endfor %}
 </ul>
